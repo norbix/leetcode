@@ -1,7 +1,7 @@
 # Run tests
 
 ```shell
-go test -v main_test.go main.go
+go test -v *.go
 ```
 
 # Run code (happy-path)
