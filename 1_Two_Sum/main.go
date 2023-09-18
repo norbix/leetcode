@@ -1,18 +1,29 @@
 package main
 
-import (
-	log "github.com/sirupsen/logrus"
-)
+import "fmt"
 
-func TwoSum(one, two int) int {
-	return one + two
+func TwoSum(nums []int, target int) []int {
+	numMap := make(map[int]int)
+
+	for i, num := range nums {
+		complement := target - num
+		if index, found := numMap[complement]; found {
+			// We found a complement in the map, return the indices.
+			return []int{index, i}
+		}
+
+		// Store the current number and its index in the map.
+		numMap[num] = i
+	}
+
+	// If no solution is found, return an empty slice.
+	return []int{}
 }
 
 func main() {
-	i := 1
-	j := 1
+	nums := []int{2, 7, 11, 15}
+	target := 9
 
-	result := TwoSum(i, j)
-
-	log.Infof("%v", result)
+	sum := TwoSum(nums, target)
+	fmt.Printf("Indices of the two numbers of sum target are %v", sum)
 }

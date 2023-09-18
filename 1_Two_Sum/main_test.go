@@ -5,24 +5,12 @@ import (
 	"testing"
 )
 
-func TestTwoSum2(t *testing.T) {
-	t.Skip()
-
-	i := 3
-	j := 3
-
-	result := TwoSum(i, j)
-	expectedResult := 6
-
-	assert.Equal(t, expectedResult, result)
-}
-
 func TestTwoSum(t *testing.T) {
-	i := 1
-	j := 1
+	nums := []int{2, 7, 11, 15}
+	target := 9
 
-	result := TwoSum(i, j)
-	expectedResult := 2
+	expected := []int{0, 1}
+	result := TwoSum(nums, target)
 
-	assert.Equal(t, expectedResult, result)
+	assert.Equal(t, expected, result)
 }
